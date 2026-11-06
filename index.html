@@ -17,6 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/">
   <title>Vaquinha de Natal da Creche Amadeu Barros Leal</title>
+  <link rel="icon" href="assets/estrela-natal.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -45,15 +46,13 @@
   <main id="conteudo">
     <section class="hero" aria-labelledby="titulo">
       <div class="shell hero-inner">
-        <div class="hero-copy">
+        <div class="hero-headline">
           <div class="hero-loc">Jacarecanga, Fortaleza (CE)</div>
           <h1 id="titulo"><span>Natal da</span> <span>creche</span></h1>
-          <p class="hero-intro">Ajude a <strong>Creche Amadeu Barros Leal</strong> a celebrar o Natal com as crianças. Doe qualquer valor por Pix.</p>
           <div class="hero-date">
             <svg aria-hidden="true"><use href="#calendario"/></svg>
             <time datetime="2026-12-04">4 de dezembro de 2026</time>
           </div>
-          <a class="button button-gold" href="#contribuicoes">Doar por Pix <svg aria-hidden="true"><use href="#seta"/></svg></a>
         </div>
         <figure class="hero-postcard">
           <img src="assets/festa-detalhes.webp"
@@ -64,23 +63,28 @@
           <svg class="hero-spark" aria-hidden="true" viewBox="0 0 48 48"><use href="#estrela"/></svg>
           <figcaption><span>O pátio no último Natal</span><span>Fortaleza, CE</span></figcaption>
         </figure>
+        <div class="hero-action">
+          <p class="hero-intro">Ajude a fazer o Natal das crianças.</p>
+          <a class="button button-gold" href="#contribuicoes">Doar por Pix <svg aria-hidden="true"><use href="#seta"/></svg></a>
+        </div>
       </div>
     </section>
 
     <section class="donate" id="contribuicoes" aria-labelledby="contribuicoes-titulo">
-      <div class="shell donate-layout">
-        <div class="donate-intro">
-          <span class="small-rule" aria-hidden="true"></span>
-          <h2 id="contribuicoes-titulo">Doe por Pix</h2>
-          <p>Você escolhe o valor. A doação vai direto para a conta da <strong>Creche Amadeu Barros Leal</strong>.</p>
-        </div>
+      <div class="shell">
         <div class="donation-card">
           <div class="pix-panel">
             <div class="pix-details">
+              <div class="donate-intro">
+                <span class="small-rule" aria-hidden="true"></span>
+                <h2 id="contribuicoes-titulo">Doe por Pix</h2>
+                <p>Você escolhe o valor. A doação vai direto para a conta da <strong>Creche Amadeu Barros Leal</strong>.</p>
+              </div>
               <div class="pix-method">
+                <button class="button button-red pix-copy" type="button" data-copy="pix-code" data-success="Código Pix copiado." hidden><svg aria-hidden="true"><use href="#copia"/></svg> Copiar código Pix</button>
+                <p class="pix-status" id="pix-code-status" role="status"></p>
                 <label for="pix-code">Pix Copia e Cola</label>
                 <textarea class="pix-field" id="pix-code" rows="3" readonly spellcheck="false">00020126360014br.gov.bcb.pix0114123604340001815204000053039865802BR5925CRECHE AMADEU BARROS LEAL6009FORTALEZA62070503***6304A315</textarea>
-                <button class="button button-red" type="button" data-copy="pix-code" data-success="Código Pix copiado." hidden><svg aria-hidden="true"><use href="#copia"/></svg> Copiar código Pix</button>
               </div>
               <div class="pix-method">
                 <label for="pix-key">Chave Pix (CNPJ)</label>
@@ -88,8 +92,8 @@
                   <input class="pix-field" id="pix-key" type="text" value="12360434000181" readonly spellcheck="false">
                   <button class="button button-outline" type="button" data-copy="pix-key" data-success="Chave CNPJ copiada." hidden>Copiar CNPJ</button>
                 </div>
+                <p class="pix-status" id="pix-key-status" role="status"></p>
               </div>
-              <p class="pix-status" id="pix-status" role="status"></p>
             </div>
             <figure class="pix-qr">
               <h3>Escanear o QR Pix</h3>
@@ -165,8 +169,6 @@
     </div>
   </footer>
   <script>
-    const pixStatus = document.querySelector('#pix-status');
-
     async function copyText(text) {
       if (!navigator.clipboard?.writeText) return false;
       try {
@@ -185,12 +187,13 @@
 
     for (const button of document.querySelectorAll('[data-copy]')) {
       const field = document.getElementById(button.dataset.copy);
+      const status = document.getElementById(`${field.id}-status`);
       button.hidden = false;
       button.addEventListener('click', async () => {
         if (await copyText(field.value)) {
-          pixStatus.textContent = button.dataset.success;
+          status.textContent = button.dataset.success;
         } else {
-          selectForCopy(field, pixStatus);
+          selectForCopy(field, status);
         }
       });
     }
