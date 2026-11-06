@@ -235,7 +235,18 @@
       justify-self: center;
     }
 
-    .gallery > p { max-inline-size: 56ch; margin-block-start: .6rem; color: var(--muted); }
+    .mission {
+      display: grid;
+      align-items: start;
+      gap: .6rem clamp(1.5rem, 4vw, 3.5rem);
+      padding-block-start: clamp(1.25rem, 3vw, 2.4rem);
+      border-block-start: 1px solid #d1bfb3;
+    }
+
+    .mission h2, .gallery h2 { color: var(--pine); }
+    .mission p, .gallery > p { max-inline-size: 56ch; color: var(--muted); }
+    .mission .official-link { margin-block-start: .35rem; color: var(--pine); }
+    .gallery > p { margin-block-start: .6rem; }
 
     .photo-grid {
       display: grid;
@@ -244,7 +255,7 @@
       margin-block-start: 1.4rem;
     }
 
-    .photo-grid figure { margin: 0; }
+    .photo-grid figure { min-inline-size: 0; margin: 0; }
 
     .photo-grid img {
       display: block;
@@ -256,7 +267,7 @@
       background: var(--mint);
     }
 
-    .photo-grid figcaption { margin-block-start: .5rem; color: var(--muted); }
+    .photo-grid figcaption { margin-block-start: .55rem; color: var(--muted); font-size: .95rem; }
 
     @media (min-width: 42em) {
       .pix-panel { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
@@ -265,7 +276,8 @@
     @media (min-width: 51em) {
       main { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); }
       .illustration { grid-column: 2; grid-row: 1; }
-      .contributions, .gallery { grid-column: 1 / -1; }
+      .contributions, .mission, .gallery { grid-column: 1 / -1; }
+      .mission { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
     }
   </style>
 </head>
@@ -370,10 +382,30 @@
       </g>
     </svg>
 
-    <section class="gallery" aria-labelledby="galeria-titulo" hidden>
+    <section class="mission" aria-labelledby="missao-titulo">
+      <h2 id="missao-titulo">A missão da creche</h2>
+      <div>
+        <p>A Creche Amadeu Barros Leal é uma instituição filantrópica sem fins lucrativos em Fortaleza. Sua missão é oferecer apoio educacional e social a crianças menores de quatro anos.</p>
+        <a class="official-link" href="https://crecheamadeubarrosleal.org.br/">Visitar o site da creche</a>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="galeria-titulo">
       <h2 id="galeria-titulo">Última festa de Natal</h2>
+      <p>O pátio ganhou balões, o Papai Noel apareceu e teve presente para abrir. Veja alguns momentos da festa.</p>
       <div class="photo-grid">
-        <!-- Inserir aqui apenas fotos verificadas da edição anterior, com texto alternativo e dimensões. -->
+        <figure>
+          <img src="assets/festa-detalhes.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Balões vermelhos e verdes sobre o parquinho da creche">
+          <figcaption>O pátio decorado para a festa</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/festa-natal.webp" width="1064" height="798" loading="lazy" decoding="async" alt="Papai Noel e uma ajudante acenam sob um arco de balões">
+          <figcaption>A chegada do Papai Noel</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/festa-presentes.webp" width="800" height="600" loading="lazy" decoding="async" alt="Mãos abrindo um presente com embrulho prateado">
+          <figcaption>Hora de abrir os presentes</figcaption>
+        </figure>
       </div>
     </section>
   </main>
