@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="text-scale" content="scale">
+  <meta name="theme-color" content="#fff8ee">
+  <meta name="description" content="Acompanhe a preparação da Vaquinha de Natal da Creche e saiba quando as contribuições abrirem.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vaquinha de Natal da Creche">
+  <meta property="og:description" content="Acompanhe a preparação da campanha e a abertura das contribuições.">
+  <title>Vaquinha de Natal da Creche</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fff8ee;
+      --ink: #272749;
+      --muted: #4d4761;
+      --pine: #17463e;
+      --mint: #e4efe4;
+      --ribbon: #a03258;
+      font-family: 'Avenir Next', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    main {
+      display: grid;
+      align-items: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      inline-size: min(100% - 2 * clamp(1rem, 4vw, 4rem), 73rem);
+      margin-inline: auto;
+      padding-block: clamp(2.5rem, 10vw, 8rem);
+    }
+
+    .letter { min-inline-size: 0; }
+
+    .mark {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-block-end: 1.15rem;
+      color: var(--ribbon);
+      font-weight: 700;
+    }
+
+    .mark svg { flex: none; inline-size: 1.15rem; block-size: 1.15rem; }
+
+    h1, h2 {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      overflow-wrap: anywhere;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 1.45rem + 4.3vw, 5.05rem);
+      letter-spacing: -.048em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+
+    p {
+      margin: 0;
+      overflow-wrap: anywhere;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .introduction {
+      max-inline-size: 48ch;
+      margin-block-start: 1.25rem;
+      color: var(--muted);
+      font-size: 1.125rem;
+    }
+
+    .contributions {
+      max-inline-size: 33rem;
+      margin-block-start: clamp(1.65rem, 4vw, 2.8rem);
+      padding: clamp(1rem, 2.6vw, 1.55rem);
+      border-inline-start: .3rem solid var(--pine);
+      border-radius: 0 .65rem .65rem 0;
+      background: var(--mint);
+      color: var(--pine);
+    }
+
+    .contributions h2 {
+      font-size: clamp(1.25rem, 1.05rem + .55vw, 1.55rem);
+      line-height: 1.22;
+    }
+
+    .contributions p { max-inline-size: 44ch; margin-block-start: .55rem; }
+
+    .illustration {
+      display: block;
+      inline-size: 100%;
+      max-inline-size: 32rem;
+      block-size: auto;
+      justify-self: center;
+    }
+
+    @media (min-width: 51em) {
+      main { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="letter">
+      <span class="mark">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c.8 7.4 4.6 11.2 12 12-7.4.8-11.2 4.6-12 12C11.2 16.6 7.4 12.8 0 12 7.4 11.2 11.2 7.4 12 0Z"/>
+        </svg>
+        Natal solidário
+      </span>
+      <h1>Vaquinha de Natal da Creche</h1>
+      <p class="introduction">Estamos organizando uma arrecadação para apoiar a creche neste Natal.</p>
+
+      <!-- Atualize esta seção quando os dados da campanha e o canal de doação estiverem confirmados. -->
+      <section class="contributions" id="contribuicoes">
+        <h2>Contribuições ainda fechadas</h2>
+        <p>Os detalhes da campanha e as formas de contribuir serão publicados aqui assim que forem confirmados.</p>
+      </section>
+    </div>
+
+    <svg class="illustration" aria-hidden="true" focusable="false" viewBox="0 0 496 504" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="34" width="430" height="430" rx="29" fill="#a03258" transform="rotate(6 245 249)"/>
+      <rect x="31" y="28" width="430" height="430" rx="29" fill="#272749" transform="rotate(-5 246 243)"/>
+      <path d="M107 427V206a141 141 0 0 1 282 0v221Z" fill="#383961"/>
+      <path d="M121 427V206a127 127 0 0 1 254 0v221Z" fill="none" stroke="#e7a8b3" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>
+      <path d="M247 65c2 23 12 35 34 38-22 3-32 15-34 38-2-23-12-35-34-38 22-3 32-15 34-38Z" fill="#ffd67a"/>
+      <g fill="#ffd67a">
+        <circle cx="152" cy="203" r="4"/>
+        <circle cx="347" cy="247" r="4"/>
+        <circle cx="171" cy="252" r="2.5"/>
+        <circle cx="323" cy="188" r="3"/>
+      </g>
+      <g fill="#f5c3ce">
+        <path d="M150 271c1 13 7 19 20 20-13 1-19 7-20 20-1-13-7-19-20-20 13-1 19-7 20-20Z"/>
+        <path d="M345 139c1 10 5 14 15 15-10 1-14 5-15 15-1-10-5-14-15-15 10-1 14-5 15-15Z"/>
+        <circle cx="188" cy="138" r="3"/>
+        <circle cx="354" cy="296" r="2.5"/>
+      </g>
+      <path d="M229 346h36v64h-36z" fill="#9d575f"/>
+      <path d="M247 209 132 369c56 29 178 29 230 0Z" fill="#286a58"/>
+      <path d="M247 172 155 314c45 24 144 24 184 0Z" fill="#418069"/>
+      <path d="M247 131 182 250c35 16 97 16 130 0Z" fill="#75a585"/>
+      <path d="M173 302c60 13 118-18 130-46m-152 99c51 8 122-6 173-38" fill="none" stroke="#ffd67a" stroke-width="3" stroke-linecap="round" stroke-dasharray=".4 10"/>
+      <circle cx="218" cy="224" r="6" fill="#fff8ee"/>
+      <circle cx="270" cy="245" r="7" fill="#a03258"/>
+      <circle cx="239" cy="282" r="6" fill="#f5c3ce"/>
+      <circle cx="294" cy="295" r="6" fill="#fff8ee"/>
+      <circle cx="202" cy="337" r="7" fill="#f5c3ce"/>
+      <circle cx="274" cy="354" r="6" fill="#fff8ee"/>
+      <path d="M104 425c46-10 70-17 107-12 40 5 68 11 176-4" fill="none" stroke="#e7a8b3" stroke-width="2" stroke-linecap="round"/>
+      <g transform="rotate(-7 182 395)">
+        <rect x="151" y="369" width="62" height="50" rx="4" fill="#f5c3ce"/>
+        <path d="M176 368h12v51h-12z" fill="#a03258"/>
+        <path d="M183 370c-23-2-28-18-16-17 6 0 14 10 16 17Zm0 0c22-4 28-20 16-18-6 1-14 11-16 18Z" fill="none" stroke="#f5c3ce" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g transform="rotate(8 316 398)">
+        <rect x="286" y="380" width="62" height="34" rx="4" fill="#ffd67a"/>
+        <path d="M312 380h10v34h-10z" fill="#a03258"/>
+        <path d="M317 380c-20-3-23-16-13-14 5 1 11 8 13 14Zm0 0c18-2 23-15 13-14-6 1-11 8-13 14Z" fill="none" stroke="#ffd67a" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </main>
+</body>
+</html>
