@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="text-scale" content="scale">
   <meta name="theme-color" content="#fff8ee">
-  <meta name="description" content="Acompanhe a preparação da Vaquinha de Natal da Creche e saiba quando as contribuições abrirem.">
+  <meta name="description" content="Apoie a Creche Amadeu Barros Leal, em Fortaleza. A ação de Natal será em 4 de dezembro de 2026.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Vaquinha de Natal da Creche">
-  <meta property="og:description" content="Acompanhe a preparação da campanha e a abertura das contribuições.">
-  <title>Vaquinha de Natal da Creche</title>
+  <meta property="og:title" content="Vaquinha de Natal da Creche Amadeu Barros Leal">
+  <meta property="og:description" content="Conheça a ação de Natal e veja como doar diretamente à creche em Fortaleza.">
+  <title>Vaquinha de Natal da Creche Amadeu Barros Leal</title>
   <style>
     :root {
       color-scheme: light;
@@ -97,6 +97,20 @@
 
     .contributions p { max-inline-size: 44ch; margin-block-start: .55rem; }
 
+    .donation-link {
+      display: inline-block;
+      margin-block-start: 1rem;
+      padding: .65rem 1rem;
+      border-radius: .45rem;
+      background: var(--pine);
+      color: var(--paper);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .donation-link:hover { text-decoration: underline; }
+    .donation-link:focus-visible { outline: .2rem solid var(--ribbon); outline-offset: .2rem; }
+
     .illustration {
       display: block;
       inline-size: 100%;
@@ -120,12 +134,12 @@
         Natal solidário
       </span>
       <h1>Vaquinha de Natal da Creche</h1>
-      <p class="introduction">Estamos organizando uma arrecadação para apoiar a creche neste Natal.</p>
+      <p class="introduction">A ação de Natal será na <time datetime="2026-12-04">sexta-feira, 4 de dezembro de 2026</time>, em apoio à <strong>Creche Amadeu Barros Leal</strong>. A creche fica no bairro Jacarecanga, em Fortaleza (CE).</p>
 
-      <!-- Atualize esta seção quando os dados da campanha e o canal de doação estiverem confirmados. -->
-      <section class="contributions" id="contribuicoes">
-        <h2>Contribuições ainda fechadas</h2>
-        <p>Os detalhes da campanha e as formas de contribuir serão publicados aqui assim que forem confirmados.</p>
+      <section class="contributions" id="contribuicoes" aria-labelledby="contribuicoes-titulo">
+        <h2 id="contribuicoes-titulo">Como contribuir</h2>
+        <p>O site oficial da creche informa como fazer doações em dinheiro, inclusive por Pix.</p>
+        <a class="donation-link" href="https://crecheamadeubarrosleal.org.br/visitas/">Doar diretamente à creche</a>
       </section>
     </div>
 
