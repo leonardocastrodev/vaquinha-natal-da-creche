@@ -199,6 +199,7 @@ footer .share-fallback label, footer .pix-status { color: var(--paper); }
   .gallery .feature { grid-column: span 7; grid-row: span 2; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
   .gallery .feature img { height: 100%; }
   .gallery figure:not(.feature, .extra) img { aspect-ratio: 2.25 / 1; }
+  .gallery .presents img { object-position: center top; }
   .gallery .extra { grid-column: span 6; }
 }
 
