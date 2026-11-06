@@ -9,6 +9,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vaquinha de Natal da Creche Amadeu Barros Leal">
   <meta property="og:description" content="Conheça a ação de Natal e veja como doar diretamente à creche em Fortaleza.">
+  <meta property="og:url" content="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/">
+  <meta property="og:image" content="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/assets/compartilhar.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cartão da Vaquinha de Natal da Creche Amadeu Barros Leal">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/">
   <title>Vaquinha de Natal da Creche Amadeu Barros Leal</title>
   <style>
     :root {
@@ -34,10 +41,10 @@
     main {
       display: grid;
       align-items: center;
-      gap: clamp(2rem, 5vw, 5rem);
+      gap: clamp(2rem, 5vw, 4.5rem);
       inline-size: min(100% - 2 * clamp(1rem, 4vw, 4rem), 73rem);
       margin-inline: auto;
-      padding-block: clamp(2.5rem, 10vw, 8rem);
+      padding-block: clamp(2rem, 6vw, 5rem);
     }
 
     .letter { min-inline-size: 0; }
@@ -53,7 +60,8 @@
 
     .mark svg { flex: none; inline-size: 1.15rem; block-size: 1.15rem; }
 
-    h1, h2 {
+    h1, h2, h3 {
+      text-wrap: balance;
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
       overflow-wrap: anywhere;
@@ -80,36 +88,144 @@
       font-size: 1.125rem;
     }
 
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-block-size: 2.75rem;
+      padding: .62rem 1rem;
+      border: 1px solid var(--pine);
+      border-radius: .48rem;
+      background: var(--paper);
+      color: var(--pine);
+      font: inherit;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button[hidden] { display: none; }
+    .button:hover { text-decoration: underline; }
+    .button-primary { background: var(--pine); color: var(--paper); }
+    .hero-action { margin-block-start: 1.4rem; }
+
+    :is(a, button, input, textarea):focus-visible {
+      outline: .18rem solid var(--ribbon);
+      outline-offset: .2rem;
+    }
+
     .contributions {
-      max-inline-size: 33rem;
-      margin-block-start: clamp(1.65rem, 4vw, 2.8rem);
-      padding: clamp(1rem, 2.6vw, 1.55rem);
+      padding: clamp(1.1rem, 4vw, 2.65rem);
       border-inline-start: .3rem solid var(--pine);
-      border-radius: 0 .65rem .65rem 0;
+      border-radius: 0 1.15rem 1.15rem 0;
       background: var(--mint);
       color: var(--pine);
     }
 
-    .contributions h2 {
-      font-size: clamp(1.25rem, 1.05rem + .55vw, 1.55rem);
+    h2 {
+      font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.45rem);
       line-height: 1.22;
     }
 
-    .contributions p { max-inline-size: 44ch; margin-block-start: .55rem; }
+    .contributions p { max-inline-size: 55ch; margin-block-start: .55rem; }
 
-    .donation-link {
-      display: inline-block;
-      margin-block-start: 1rem;
-      padding: .65rem 1rem;
-      border-radius: .45rem;
-      background: var(--pine);
-      color: var(--paper);
-      font-weight: 700;
-      text-decoration: none;
+    .pix-panel {
+      display: grid;
+      gap: 1.65rem;
+      align-items: start;
+      margin-block-start: 1.4rem;
     }
 
-    .donation-link:hover { text-decoration: underline; }
-    .donation-link:focus-visible { outline: .2rem solid var(--ribbon); outline-offset: .2rem; }
+    .pix-details { min-inline-size: 0; }
+
+    .pix-method + .pix-method { margin-block-start: 1.2rem; }
+
+    .pix-method label, .share-fallback label {
+      display: block;
+      margin-block-end: .35rem;
+      font-weight: 700;
+    }
+
+    .pix-field {
+      inline-size: 100%;
+      min-block-size: 2.75rem;
+      min-inline-size: 0;
+      padding: .55rem .72rem;
+      border: 1px solid #5e756a;
+      border-radius: .45rem;
+      background: #fffdf8;
+      color: var(--ink);
+      font: 1rem/1.45 ui-monospace, 'SFMono-Regular', Consolas, monospace;
+    }
+
+    textarea.pix-field { display: block; resize: vertical; overflow-wrap: anywhere; }
+    .pix-method .button { margin-block-start: .5rem; }
+
+    .pix-key-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: start;
+      gap: .5rem;
+    }
+
+    .pix-key-row .pix-field { flex: 1 1 12rem; }
+    .pix-key-row .button { margin-block-start: 0; }
+
+    .pix-status:empty { margin: 0; }
+    .pix-status { font-weight: 700; }
+
+    .pix-qr {
+      display: grid;
+      justify-items: center;
+      gap: .7rem;
+      margin: 0;
+      padding: clamp(.95rem, 3vw, 1.5rem);
+      border-radius: .75rem;
+      background: var(--pine);
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .pix-qr h3 { font-size: 1.27rem; }
+
+    .pix-qr img {
+      display: block;
+      inline-size: min(100%, 13.25rem);
+      block-size: auto;
+      background: white;
+      image-rendering: pixelated;
+    }
+
+    .pix-steps {
+      max-inline-size: 61ch;
+      margin: 1.55rem 0 0;
+      padding-inline-start: 1.45rem;
+    }
+
+    .pix-steps li + li { margin-block-start: .25rem; }
+
+    .donation-tools {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .65rem 1rem;
+      margin-block-start: 1.5rem;
+      padding-block-start: 1.05rem;
+      border-block-start: 1px solid #95a99a;
+    }
+
+    .official-link {
+      display: inline-flex;
+      align-items: center;
+      min-block-size: 2.75rem;
+      color: inherit;
+      font-weight: 700;
+      text-underline-offset: .17em;
+    }
+
+    .share-fallback { max-inline-size: 32rem; margin-block-start: .7rem; }
 
     .illustration {
       display: block;
@@ -119,14 +235,43 @@
       justify-self: center;
     }
 
+    .gallery > p { max-inline-size: 56ch; margin-block-start: .6rem; color: var(--muted); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+      gap: clamp(.8rem, 2vw, 1.45rem);
+      margin-block-start: 1.4rem;
+    }
+
+    .photo-grid figure { margin: 0; }
+
+    .photo-grid img {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: .75rem;
+      background: var(--mint);
+    }
+
+    .photo-grid figcaption { margin-block-start: .5rem; color: var(--muted); }
+
+    @media (min-width: 42em) {
+      .pix-panel { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+    }
+
     @media (min-width: 51em) {
       main { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); }
+      .illustration { grid-column: 2; grid-row: 1; }
+      .contributions, .gallery { grid-column: 1 / -1; }
     }
   </style>
 </head>
 <body>
   <main>
-    <div class="letter">
+    <header class="letter">
       <span class="mark">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0c.8 7.4 4.6 11.2 12 12-7.4.8-11.2 4.6-12 12C11.2 16.6 7.4 12.8 0 12 7.4 11.2 11.2 7.4 12 0Z"/>
@@ -135,13 +280,53 @@
       </span>
       <h1>Vaquinha de Natal da Creche</h1>
       <p class="introduction">A ação de Natal será na <time datetime="2026-12-04">sexta-feira, 4 de dezembro de 2026</time>, em apoio à <strong>Creche Amadeu Barros Leal</strong>. A creche fica no bairro Jacarecanga, em Fortaleza (CE).</p>
+      <a class="button button-primary hero-action" href="#contribuicoes">Doar por Pix</a>
+    </header>
 
-      <section class="contributions" id="contribuicoes" aria-labelledby="contribuicoes-titulo">
-        <h2 id="contribuicoes-titulo">Como contribuir</h2>
-        <p>O site oficial da creche informa como fazer doações em dinheiro, inclusive por Pix.</p>
-        <a class="donation-link" href="https://crecheamadeubarrosleal.org.br/visitas/">Doar diretamente à creche</a>
-      </section>
-    </div>
+    <section class="contributions" id="contribuicoes" aria-labelledby="contribuicoes-titulo">
+      <h2 id="contribuicoes-titulo">Como doar por Pix</h2>
+      <p>A doação vai diretamente para a <strong>Creche Amadeu Barros Leal</strong>. Você escolhe o valor.</p>
+
+      <div class="pix-panel">
+        <div class="pix-details">
+          <div class="pix-method">
+            <label for="pix-code">Pix Copia e Cola</label>
+            <textarea class="pix-field" id="pix-code" rows="3" readonly spellcheck="false">00020126360014br.gov.bcb.pix0114123604340001815204000053039865802BR5925CRECHE AMADEU BARROS LEAL6009FORTALEZA62070503***6304A315</textarea>
+            <button class="button button-primary" type="button" data-copy="pix-code" data-success="Código Pix copiado." hidden>Copiar código Pix</button>
+          </div>
+          <div class="pix-method">
+            <label for="pix-key">Chave Pix (CNPJ)</label>
+            <div class="pix-key-row">
+              <input class="pix-field" id="pix-key" type="text" value="12360434000181" readonly spellcheck="false">
+              <button class="button" type="button" data-copy="pix-key" data-success="Chave CNPJ copiada." hidden>Copiar chave Pix</button>
+            </div>
+          </div>
+          <p class="pix-status" id="pix-status" role="status"></p>
+        </div>
+
+        <figure class="pix-qr">
+          <h3>Escanear o QR Pix</h3>
+          <img src="assets/pix-creche.png" width="470" height="470" alt="QR Pix para doação à Creche Amadeu Barros Leal, com valor livre">
+          <figcaption>Use o leitor de QR Code no aplicativo do seu banco.</figcaption>
+        </figure>
+      </div>
+
+      <ol class="pix-steps">
+        <li>No Pix do seu banco, selecione <strong>Copia e Cola</strong>, <strong>chave CNPJ</strong> ou <strong>QR Code</strong>.</li>
+        <li>Informe o valor que deseja doar.</li>
+        <li>Confira o nome <strong>Creche Amadeu Barros Leal</strong> antes de confirmar.</li>
+      </ol>
+
+      <div class="donation-tools">
+        <a class="official-link" href="https://crecheamadeubarrosleal.org.br/visitas/">Conferir os dados no site da creche</a>
+        <button class="button" type="button" id="share-button" hidden>Compartilhar a vaquinha</button>
+      </div>
+      <div class="share-fallback" id="share-fallback" hidden>
+        <label for="share-link">Link da vaquinha</label>
+        <input class="pix-field" id="share-link" type="url" readonly>
+      </div>
+      <p class="pix-status" id="share-status" role="status"></p>
+    </section>
 
     <svg class="illustration" aria-hidden="true" focusable="false" viewBox="0 0 496 504" xmlns="http://www.w3.org/2000/svg">
       <rect x="30" y="34" width="430" height="430" rx="29" fill="#a03258" transform="rotate(6 245 249)"/>
@@ -184,6 +369,70 @@
         <path d="M317 380c-20-3-23-16-13-14 5 1 11 8 13 14Zm0 0c18-2 23-15 13-14-6 1-11 8-13 14Z" fill="none" stroke="#ffd67a" stroke-width="3" stroke-linejoin="round"/>
       </g>
     </svg>
+
+    <section class="gallery" aria-labelledby="galeria-titulo" hidden>
+      <h2 id="galeria-titulo">Última festa de Natal</h2>
+      <div class="photo-grid">
+        <!-- Inserir aqui apenas fotos verificadas da edição anterior, com texto alternativo e dimensões. -->
+      </div>
+    </section>
   </main>
+  <script>
+    const pixStatus = document.querySelector('#pix-status');
+
+    async function copyText(text) {
+      if (!navigator.clipboard?.writeText) return false;
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        return false;
+      }
+    }
+
+    function selectForCopy(field, status) {
+      field.focus();
+      field.select();
+      status.textContent = 'Use a opção Copiar do seu dispositivo no campo selecionado.';
+    }
+
+    for (const button of document.querySelectorAll('[data-copy]')) {
+      const field = document.getElementById(button.dataset.copy);
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        if (await copyText(field.value)) {
+          pixStatus.textContent = button.dataset.success;
+        } else {
+          selectForCopy(field, pixStatus);
+        }
+      });
+    }
+
+    const shareButton = document.querySelector('#share-button');
+    const shareStatus = document.querySelector('#share-status');
+    const shareLink = document.querySelector('#share-link');
+    const shareFallback = document.querySelector('#share-fallback');
+    const pageUrl = document.querySelector('link[rel="canonical"]').href;
+    shareButton.hidden = false;
+
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: document.title, url: pageUrl });
+          return;
+        } catch (error) {
+          if (error.name === 'AbortError') return;
+        }
+      }
+
+      if (await copyText(pageUrl)) {
+        shareStatus.textContent = 'Link da vaquinha copiado.';
+      } else {
+        shareLink.value = pageUrl;
+        shareFallback.hidden = false;
+        selectForCopy(shareLink, shareStatus);
+      }
+    });
+  </script>
 </body>
 </html>
