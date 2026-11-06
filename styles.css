@@ -171,6 +171,7 @@ textarea.pix-field { resize: vertical; min-height: 4.2rem; overflow-wrap: anywhe
   background: var(--white); border: 1px solid #e6cbc2; border-radius: .55rem;
 }
 .gallery img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; background: #ead9ce; }
+.gallery .extra img { aspect-ratio: 5 / 3; }
 .gallery figcaption { padding: .55rem .3rem .25rem; color: var(--forest); font-size: .9rem; font-weight: 700; }
 
 .mission { padding-block: clamp(2.8rem, 6vw, 4.5rem); }
@@ -193,10 +194,12 @@ footer .share-fallback label, footer .pix-status { color: var(--paper); }
   .pix-panel { grid-template-columns: minmax(0, 1fr) 11.25rem; gap: clamp(1.5rem, 5vw, 3.5rem); }
   .album-heading, .mission-inner { grid-template-columns: 1.13fr .87fr; }
   .mission-inner { align-items: center; }
-  .gallery { grid-template-columns: 1.5fr 1fr; }
-  .gallery .feature { grid-row: span 2; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+  .gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .gallery figure { grid-column: span 5; }
+  .gallery .feature { grid-column: span 7; grid-row: span 2; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
   .gallery .feature img { height: 100%; }
-  .gallery figure:not(.feature) img { aspect-ratio: 2.25 / 1; }
+  .gallery figure:not(.feature, .extra) img { aspect-ratio: 2.25 / 1; }
+  .gallery .extra { grid-column: span 6; }
 }
 
 @media (min-width: 53em) {
