@@ -4,411 +4,166 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="text-scale" content="scale">
-  <meta name="theme-color" content="#fff8ee">
+  <meta name="theme-color" content="#15382b">
   <meta name="description" content="Apoie a Creche Amadeu Barros Leal, em Fortaleza. A ação de Natal será em 4 de dezembro de 2026.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vaquinha de Natal da Creche Amadeu Barros Leal">
   <meta property="og:description" content="Conheça a ação de Natal e veja como doar diretamente à creche em Fortaleza.">
   <meta property="og:url" content="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/">
-  <meta property="og:image" content="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/assets/compartilhar.png">
+  <meta property="og:image" content="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/assets/compartilhar-natal.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Cartão da Vaquinha de Natal da Creche Amadeu Barros Leal">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://leonardocastrodev.github.io/vaquinha-natal-da-creche/">
   <title>Vaquinha de Natal da Creche Amadeu Barros Leal</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #fff8ee;
-      --ink: #272749;
-      --muted: #4d4761;
-      --pine: #17463e;
-      --mint: #e4efe4;
-      --ribbon: #a03258;
-      font-family: 'Avenir Next', system-ui, sans-serif;
-      line-height: 1.6;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-    }
-
-    main {
-      display: grid;
-      align-items: center;
-      gap: clamp(2rem, 5vw, 4.5rem);
-      inline-size: min(100% - 2 * clamp(1rem, 4vw, 4rem), 73rem);
-      margin-inline: auto;
-      padding-block: clamp(2rem, 6vw, 5rem);
-    }
-
-    .letter { min-inline-size: 0; }
-
-    .mark {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      margin-block-end: 1.15rem;
-      color: var(--ribbon);
-      font-weight: 700;
-    }
-
-    .mark svg { flex: none; inline-size: 1.15rem; block-size: 1.15rem; }
-
-    h1, h2, h3 {
-      text-wrap: balance;
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      overflow-wrap: anywhere;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 1.45rem + 4.3vw, 5.05rem);
-      letter-spacing: -.048em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
-
-    p {
-      margin: 0;
-      overflow-wrap: anywhere;
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    .introduction {
-      max-inline-size: 48ch;
-      margin-block-start: 1.25rem;
-      color: var(--muted);
-      font-size: 1.125rem;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-block-size: 2.75rem;
-      padding: .62rem 1rem;
-      border: 1px solid var(--pine);
-      border-radius: .48rem;
-      background: var(--paper);
-      color: var(--pine);
-      font: inherit;
-      font-weight: 700;
-      line-height: 1.25;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .button[hidden] { display: none; }
-    .button:hover { text-decoration: underline; }
-    .button-primary { background: var(--pine); color: var(--paper); }
-    .hero-action { margin-block-start: 1.4rem; }
-
-    :is(a, button, input, textarea):focus-visible {
-      outline: .18rem solid var(--ribbon);
-      outline-offset: .2rem;
-    }
-
-    .contributions {
-      padding: clamp(1.1rem, 4vw, 2.65rem);
-      border-inline-start: .3rem solid var(--pine);
-      border-radius: 0 1.15rem 1.15rem 0;
-      background: var(--mint);
-      color: var(--pine);
-    }
-
-    h2 {
-      font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.45rem);
-      line-height: 1.22;
-    }
-
-    .contributions p { max-inline-size: 55ch; margin-block-start: .55rem; }
-
-    .pix-panel {
-      display: grid;
-      gap: 1.65rem;
-      align-items: start;
-      margin-block-start: 1.4rem;
-    }
-
-    .pix-details { min-inline-size: 0; }
-
-    .pix-method + .pix-method { margin-block-start: 1.2rem; }
-
-    .pix-method label, .share-fallback label {
-      display: block;
-      margin-block-end: .35rem;
-      font-weight: 700;
-    }
-
-    .pix-field {
-      inline-size: 100%;
-      min-block-size: 2.75rem;
-      min-inline-size: 0;
-      padding: .55rem .72rem;
-      border: 1px solid #5e756a;
-      border-radius: .45rem;
-      background: #fffdf8;
-      color: var(--ink);
-      font: 1rem/1.45 ui-monospace, 'SFMono-Regular', Consolas, monospace;
-    }
-
-    textarea.pix-field { display: block; resize: vertical; overflow-wrap: anywhere; }
-    .pix-method .button { margin-block-start: .5rem; }
-
-    .pix-key-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: start;
-      gap: .5rem;
-    }
-
-    .pix-key-row .pix-field { flex: 1 1 12rem; }
-    .pix-key-row .button { margin-block-start: 0; }
-
-    .pix-status:empty { margin: 0; }
-    .pix-status { font-weight: 700; }
-
-    .pix-qr {
-      display: grid;
-      justify-items: center;
-      gap: .7rem;
-      margin: 0;
-      padding: clamp(.95rem, 3vw, 1.5rem);
-      border-radius: .75rem;
-      background: var(--pine);
-      color: var(--paper);
-      text-align: center;
-    }
-
-    .pix-qr h3 { font-size: 1.27rem; }
-
-    .pix-qr img {
-      display: block;
-      inline-size: min(100%, 13.25rem);
-      block-size: auto;
-      background: white;
-      image-rendering: pixelated;
-    }
-
-    .pix-steps {
-      max-inline-size: 61ch;
-      margin: 1.55rem 0 0;
-      padding-inline-start: 1.45rem;
-    }
-
-    .pix-steps li + li { margin-block-start: .25rem; }
-
-    .donation-tools {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: .65rem 1rem;
-      margin-block-start: 1.5rem;
-      padding-block-start: 1.05rem;
-      border-block-start: 1px solid #95a99a;
-    }
-
-    .official-link {
-      display: inline-flex;
-      align-items: center;
-      min-block-size: 2.75rem;
-      color: inherit;
-      font-weight: 700;
-      text-underline-offset: .17em;
-    }
-
-    .share-fallback { max-inline-size: 32rem; margin-block-start: .7rem; }
-
-    .illustration {
-      display: block;
-      inline-size: 100%;
-      max-inline-size: 32rem;
-      block-size: auto;
-      justify-self: center;
-    }
-
-    .mission {
-      display: grid;
-      align-items: start;
-      gap: .6rem clamp(1.5rem, 4vw, 3.5rem);
-      padding-block-start: clamp(1.25rem, 3vw, 2.4rem);
-      border-block-start: 1px solid #d1bfb3;
-    }
-
-    .mission h2, .gallery h2 { color: var(--pine); }
-    .mission p, .gallery > p { max-inline-size: 56ch; color: var(--muted); }
-    .mission .official-link { margin-block-start: .35rem; color: var(--pine); }
-    .gallery > p { margin-block-start: .6rem; }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-      gap: clamp(.8rem, 2vw, 1.45rem);
-      margin-block-start: 1.4rem;
-    }
-
-    .photo-grid figure { min-inline-size: 0; margin: 0; }
-
-    .photo-grid img {
-      display: block;
-      inline-size: 100%;
-      block-size: auto;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: .75rem;
-      background: var(--mint);
-    }
-
-    .photo-grid figcaption { margin-block-start: .55rem; color: var(--muted); font-size: .95rem; }
-
-    @media (min-width: 42em) {
-      .pix-panel { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
-    }
-
-    @media (min-width: 51em) {
-      main { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); }
-      .illustration { grid-column: 2; grid-row: 1; }
-      .contributions, .mission, .gallery { grid-column: 1 / -1; }
-      .mission { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
-    }
-  </style>
+  <link rel="preload" href="assets/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <header class="letter">
-      <span class="mark">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0c.8 7.4 4.6 11.2 12 12-7.4.8-11.2 4.6-12 12C11.2 16.6 7.4 12.8 0 12 7.4 11.2 11.2 7.4 12 0Z"/>
-        </svg>
-        Natal solidário
-      </span>
-      <h1>Vaquinha de Natal da Creche</h1>
-      <p class="introduction">A ação de Natal será na <time datetime="2026-12-04">sexta-feira, 4 de dezembro de 2026</time>, em apoio à <strong>Creche Amadeu Barros Leal</strong>. A creche fica no bairro Jacarecanga, em Fortaleza (CE).</p>
-      <a class="button button-primary hero-action" href="#contribuicoes">Doar por Pix</a>
-    </header>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <symbol id="estrela" viewBox="0 0 48 48"><path fill="currentColor" d="M24 0c1.5 16 8 22.5 24 24-16 1.5-22.5 8-24 24C22.5 32 16 25.5 0 24 16 22.5 22.5 16 24 0Z"/></symbol>
+    <symbol id="seta" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="copia" viewBox="0 0 24 24"><path d="M8 8h12v12H8zM4 16V4h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="calendario" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 4v4m8-4v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="masthead">
+    <div class="shell">
+      <a class="wordmark" href="#conteudo">
+        <svg aria-hidden="true"><use href="#estrela"/></svg>
+        Creche Amadeu Barros Leal
+      </a>
+      <nav aria-label="Nesta página">
+        <a href="#album">Fotos da festa</a>
+        <a href="#creche">A creche</a>
+        <a class="nav-donate" href="#contribuicoes">Doar por Pix</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="contributions" id="contribuicoes" aria-labelledby="contribuicoes-titulo">
-      <h2 id="contribuicoes-titulo">Como doar por Pix</h2>
-      <p>A doação vai diretamente para a <strong>Creche Amadeu Barros Leal</strong>. Você escolhe o valor.</p>
-
-      <div class="pix-panel">
-        <div class="pix-details">
-          <div class="pix-method">
-            <label for="pix-code">Pix Copia e Cola</label>
-            <textarea class="pix-field" id="pix-code" rows="3" readonly spellcheck="false">00020126360014br.gov.bcb.pix0114123604340001815204000053039865802BR5925CRECHE AMADEU BARROS LEAL6009FORTALEZA62070503***6304A315</textarea>
-            <button class="button button-primary" type="button" data-copy="pix-code" data-success="Código Pix copiado." hidden>Copiar código Pix</button>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <div class="hero-loc">Jacarecanga, Fortaleza (CE)</div>
+          <h1 id="titulo"><span>Natal da</span> <span>creche</span></h1>
+          <p class="hero-intro">Ajude a <strong>Creche Amadeu Barros Leal</strong> a celebrar o Natal com as crianças. Doe qualquer valor por Pix.</p>
+          <div class="hero-date">
+            <svg aria-hidden="true"><use href="#calendario"/></svg>
+            <time datetime="2026-12-04">4 de dezembro de 2026</time>
           </div>
-          <div class="pix-method">
-            <label for="pix-key">Chave Pix (CNPJ)</label>
-            <div class="pix-key-row">
-              <input class="pix-field" id="pix-key" type="text" value="12360434000181" readonly spellcheck="false">
-              <button class="button" type="button" data-copy="pix-key" data-success="Chave CNPJ copiada." hidden>Copiar chave Pix</button>
-            </div>
-          </div>
-          <p class="pix-status" id="pix-status" role="status"></p>
+          <a class="button button-gold" href="#contribuicoes">Doar por Pix <svg aria-hidden="true"><use href="#seta"/></svg></a>
         </div>
-
-        <figure class="pix-qr">
-          <h3>Escanear o QR Pix</h3>
-          <img src="assets/pix-creche.png" width="470" height="470" alt="QR Pix para doação à Creche Amadeu Barros Leal, com valor livre">
-          <figcaption>Use o leitor de QR Code no aplicativo do seu banco.</figcaption>
+        <figure class="hero-postcard">
+          <img src="assets/festa-detalhes.webp"
+               srcset="assets/festa-patio-640.webp 640w, assets/festa-detalhes.webp 1200w"
+               sizes="(min-width: 80em) 36rem, (min-width: 53em) 47vw, calc(100vw - 3.5rem)"
+               width="1200" height="900" fetchpriority="high"
+               alt="Balões de Natal sobre a casinha e o escorregador do parquinho da creche">
+          <svg class="hero-spark" aria-hidden="true" viewBox="0 0 48 48"><use href="#estrela"/></svg>
+          <figcaption><span>O pátio no último Natal</span><span>Fortaleza, CE</span></figcaption>
         </figure>
-      </div>
-
-      <ol class="pix-steps">
-        <li>No Pix do seu banco, selecione <strong>Copia e Cola</strong>, <strong>chave CNPJ</strong> ou <strong>QR Code</strong>.</li>
-        <li>Informe o valor que deseja doar.</li>
-        <li>Confira o nome <strong>Creche Amadeu Barros Leal</strong> antes de confirmar.</li>
-      </ol>
-
-      <div class="donation-tools">
-        <a class="official-link" href="https://crecheamadeubarrosleal.org.br/visitas/">Conferir os dados no site da creche</a>
-        <button class="button" type="button" id="share-button" hidden>Compartilhar a vaquinha</button>
-      </div>
-      <div class="share-fallback" id="share-fallback" hidden>
-        <label for="share-link">Link da vaquinha</label>
-        <input class="pix-field" id="share-link" type="url" readonly>
-      </div>
-      <p class="pix-status" id="share-status" role="status"></p>
-    </section>
-
-    <svg class="illustration" aria-hidden="true" focusable="false" viewBox="0 0 496 504" xmlns="http://www.w3.org/2000/svg">
-      <rect x="30" y="34" width="430" height="430" rx="29" fill="#a03258" transform="rotate(6 245 249)"/>
-      <rect x="31" y="28" width="430" height="430" rx="29" fill="#272749" transform="rotate(-5 246 243)"/>
-      <path d="M107 427V206a141 141 0 0 1 282 0v221Z" fill="#383961"/>
-      <path d="M121 427V206a127 127 0 0 1 254 0v221Z" fill="none" stroke="#e7a8b3" stroke-width="2" stroke-dasharray="1 8" stroke-linecap="round"/>
-      <path d="M247 65c2 23 12 35 34 38-22 3-32 15-34 38-2-23-12-35-34-38 22-3 32-15 34-38Z" fill="#ffd67a"/>
-      <g fill="#ffd67a">
-        <circle cx="152" cy="203" r="4"/>
-        <circle cx="347" cy="247" r="4"/>
-        <circle cx="171" cy="252" r="2.5"/>
-        <circle cx="323" cy="188" r="3"/>
-      </g>
-      <g fill="#f5c3ce">
-        <path d="M150 271c1 13 7 19 20 20-13 1-19 7-20 20-1-13-7-19-20-20 13-1 19-7 20-20Z"/>
-        <path d="M345 139c1 10 5 14 15 15-10 1-14 5-15 15-1-10-5-14-15-15 10-1 14-5 15-15Z"/>
-        <circle cx="188" cy="138" r="3"/>
-        <circle cx="354" cy="296" r="2.5"/>
-      </g>
-      <path d="M229 346h36v64h-36z" fill="#9d575f"/>
-      <path d="M247 209 132 369c56 29 178 29 230 0Z" fill="#286a58"/>
-      <path d="M247 172 155 314c45 24 144 24 184 0Z" fill="#418069"/>
-      <path d="M247 131 182 250c35 16 97 16 130 0Z" fill="#75a585"/>
-      <path d="M173 302c60 13 118-18 130-46m-152 99c51 8 122-6 173-38" fill="none" stroke="#ffd67a" stroke-width="3" stroke-linecap="round" stroke-dasharray=".4 10"/>
-      <circle cx="218" cy="224" r="6" fill="#fff8ee"/>
-      <circle cx="270" cy="245" r="7" fill="#a03258"/>
-      <circle cx="239" cy="282" r="6" fill="#f5c3ce"/>
-      <circle cx="294" cy="295" r="6" fill="#fff8ee"/>
-      <circle cx="202" cy="337" r="7" fill="#f5c3ce"/>
-      <circle cx="274" cy="354" r="6" fill="#fff8ee"/>
-      <path d="M104 425c46-10 70-17 107-12 40 5 68 11 176-4" fill="none" stroke="#e7a8b3" stroke-width="2" stroke-linecap="round"/>
-      <g transform="rotate(-7 182 395)">
-        <rect x="151" y="369" width="62" height="50" rx="4" fill="#f5c3ce"/>
-        <path d="M176 368h12v51h-12z" fill="#a03258"/>
-        <path d="M183 370c-23-2-28-18-16-17 6 0 14 10 16 17Zm0 0c22-4 28-20 16-18-6 1-14 11-16 18Z" fill="none" stroke="#f5c3ce" stroke-width="3" stroke-linejoin="round"/>
-      </g>
-      <g transform="rotate(8 316 398)">
-        <rect x="286" y="380" width="62" height="34" rx="4" fill="#ffd67a"/>
-        <path d="M312 380h10v34h-10z" fill="#a03258"/>
-        <path d="M317 380c-20-3-23-16-13-14 5 1 11 8 13 14Zm0 0c18-2 23-15 13-14-6 1-11 8-13 14Z" fill="none" stroke="#ffd67a" stroke-width="3" stroke-linejoin="round"/>
-      </g>
-    </svg>
-
-    <section class="mission" aria-labelledby="missao-titulo">
-      <h2 id="missao-titulo">A missão da creche</h2>
-      <div>
-        <p>A Creche Amadeu Barros Leal é uma instituição filantrópica sem fins lucrativos em Fortaleza. Sua missão é oferecer apoio educacional e social a crianças menores de quatro anos.</p>
-        <a class="official-link" href="https://crecheamadeubarrosleal.org.br/">Visitar o site da creche</a>
       </div>
     </section>
 
-    <section class="gallery" aria-labelledby="galeria-titulo">
-      <h2 id="galeria-titulo">Última festa de Natal</h2>
-      <p>O pátio ganhou balões, o Papai Noel apareceu e teve presente para abrir. Veja alguns momentos da festa.</p>
-      <div class="photo-grid">
-        <figure>
-          <img src="assets/festa-detalhes.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Balões vermelhos e verdes sobre o parquinho da creche">
-          <figcaption>O pátio decorado para a festa</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/festa-natal.webp" width="1064" height="798" loading="lazy" decoding="async" alt="Papai Noel e uma ajudante acenam sob um arco de balões">
-          <figcaption>A chegada do Papai Noel</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/festa-presentes.webp" width="800" height="600" loading="lazy" decoding="async" alt="Mãos abrindo um presente com embrulho prateado">
-          <figcaption>Hora de abrir os presentes</figcaption>
-        </figure>
+    <section class="donate" id="contribuicoes" aria-labelledby="contribuicoes-titulo">
+      <div class="shell donate-layout">
+        <div class="donate-intro">
+          <span class="small-rule" aria-hidden="true"></span>
+          <h2 id="contribuicoes-titulo">Doe por Pix</h2>
+          <p>Você escolhe o valor. A doação vai direto para a conta da <strong>Creche Amadeu Barros Leal</strong>.</p>
+        </div>
+        <div class="donation-card">
+          <div class="pix-panel">
+            <div class="pix-details">
+              <div class="pix-method">
+                <label for="pix-code">Pix Copia e Cola</label>
+                <textarea class="pix-field" id="pix-code" rows="3" readonly spellcheck="false">00020126360014br.gov.bcb.pix0114123604340001815204000053039865802BR5925CRECHE AMADEU BARROS LEAL6009FORTALEZA62070503***6304A315</textarea>
+                <button class="button button-red" type="button" data-copy="pix-code" data-success="Código Pix copiado." hidden><svg aria-hidden="true"><use href="#copia"/></svg> Copiar código Pix</button>
+              </div>
+              <div class="pix-method">
+                <label for="pix-key">Chave Pix (CNPJ)</label>
+                <div class="pix-key-row">
+                  <input class="pix-field" id="pix-key" type="text" value="12360434000181" readonly spellcheck="false">
+                  <button class="button button-outline" type="button" data-copy="pix-key" data-success="Chave CNPJ copiada." hidden>Copiar CNPJ</button>
+                </div>
+              </div>
+              <p class="pix-status" id="pix-status" role="status"></p>
+            </div>
+            <figure class="pix-qr">
+              <h3>Escanear o QR Pix</h3>
+              <img src="assets/pix-creche.png" width="470" height="470" loading="lazy" alt="QR Pix da Creche Amadeu Barros Leal, com valor livre">
+              <figcaption>Abra o leitor de QR Code no app do seu banco.</figcaption>
+            </figure>
+          </div>
+          <p class="pix-note">Antes de confirmar, confira se o destinatário é <strong>Creche Amadeu Barros Leal</strong>.</p>
+          <details class="pix-help">
+            <summary>Como fazer o Pix pelo celular</summary>
+            <ol>
+              <li>Copie o código ou a chave CNPJ. Você também pode escanear o QR Pix em outro aparelho.</li>
+              <li>No app do banco, abra Pix, escolha o mesmo método e informe o valor da doação.</li>
+              <li>Confira o nome da creche e confirme no banco.</li>
+            </ol>
+            <a class="official-link" href="https://crecheamadeubarrosleal.org.br/visitas/">Ver dados no site da creche</a>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="album" id="album" aria-labelledby="galeria-titulo">
+      <div class="shell">
+        <div class="album-heading">
+          <h2 id="galeria-titulo">O último Natal</h2>
+          <p>Balões no pátio, a visita do Papai Noel e a alegria de abrir os presentes. Veja os registros da festa.</p>
+        </div>
+        <div class="gallery">
+          <figure class="feature">
+            <img src="assets/festa-natal.webp" width="1064" height="798" loading="lazy" decoding="async" alt="Papai Noel e uma ajudante acenam sob um arco de balões">
+            <figcaption>A chegada do Papai Noel</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/festa-encontro.webp" width="1080" height="477" loading="lazy" decoding="async" alt="A equipe da festa acena em uma sala decorada com balões e desenhos natalinos">
+            <figcaption>A equipe em festa</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/festa-presentes.webp" width="800" height="600" loading="lazy" decoding="async" alt="Mãos abrindo um presente com embrulho prateado">
+            <figcaption>Hora de abrir os presentes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission" id="creche" aria-labelledby="missao-titulo">
+      <div class="shell mission-inner">
+        <div class="mission-heading">
+          <svg aria-hidden="true"><use href="#estrela"/></svg>
+          <h2 id="missao-titulo">Conheça a creche</h2>
+        </div>
+        <div>
+          <p>A <strong>Creche Amadeu Barros Leal</strong> é uma instituição filantrópica sem fins lucrativos em Fortaleza. Sua missão é oferecer assistência social e educação a crianças menores de quatro anos.</p>
+          <a class="official-link" href="https://crecheamadeubarrosleal.org.br/">Visitar o site da creche</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div>
+        <a class="wordmark" href="#conteudo"><svg aria-hidden="true"><use href="#estrela"/></svg> Natal da creche</a>
+        <small>Creche Amadeu Barros Leal, Fortaleza (CE)</small>
+      </div>
+      <div class="share-controls">
+        <button class="button button-gold" type="button" id="share-button" hidden>Compartilhar a vaquinha</button>
+        <div class="share-fallback" id="share-fallback" hidden>
+          <label for="share-link">Link da vaquinha</label>
+          <input class="pix-field" id="share-link" type="url" readonly>
+        </div>
+        <p class="pix-status" id="share-status" role="status"></p>
+      </div>
+    </div>
+  </footer>
   <script>
     const pixStatus = document.querySelector('#pix-status');
 
